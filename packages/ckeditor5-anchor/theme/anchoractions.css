@@ -1,0 +1,41 @@
+/*
+ * Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+
+@import "@ckeditor/ckeditor5-ui/theme/mixins/_rwd.css";
+
+.ck.ck-anchor-actions {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+
+	& .ck-anchor-actions__preview {
+		display: inline-block;
+
+		& .ck-button__label {
+			overflow: hidden;
+		}
+	}
+
+	@mixin ck-media-phone {
+		flex-wrap: wrap;
+
+		& .ck-anchor-actions__preview {
+			flex-basis: 100%;
+		}
+
+		& .ck-button:not(.ck-anchor-actions__preview) {
+			flex-basis: 50%;
+		}
+	}
+}
+
+.ck-anchor {
+	background: url(https://nightly.ckeditor.com/20-05-24-06-04/full/plugins/link/images/hidpi/anchor.png?t=K4O6) no-repeat left center;
+	border: 1px dotted #00f;
+    background-size: 16px;
+	padding-left: 18px;
+	color: #00f;
+    cursor: auto;
+}
